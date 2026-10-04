@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import { useAuth } from './context/AuthContext';
 
@@ -31,12 +31,12 @@ function Home() {
         Pick your role and stack — MERN, MEAN, Java or Python full stack, AI/ML, or Data Science —
         and get technical, HR, coding, and MCQ questions scored instantly, with progress tracked over time.
       </p>
-      <a
-        href={user ? '/setup' : '/register'}
+      <Link
+        to={user ? '/setup' : '/register'}
         className="inline-block bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-primary-dark transition"
       >
         {user ? 'Start a new interview' : 'Create your free account'}
-      </a>
+      </Link>
     </div>
   );
 }
